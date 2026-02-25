@@ -1,0 +1,30 @@
+@keyframes wave-arm {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(30deg);
+    }
+
+    50% {
+        transform: rotate(-10deg);
+    }
+
+    75% {
+        transform: rotate(20deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.animate-wave-arm {
+    animation: wave-arm 1.5s infinite ease-in-out;
+}
+
+.animate-wave-arm-delay {
+    animation: wave-arm 1.5s infinite ease-in-out;
+    animation-delay: 0.5s;
+}
