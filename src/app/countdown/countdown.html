@@ -1,0 +1,98 @@
+<div class="min-h-screen bg-pink-50 flex flex-col items-center justify-center font-sans relative overflow-hidden">
+
+    <!-- Content Container -->
+    <div class="z-10 text-center space-y-8 w-full max-w-4xl px-4">
+
+        <!-- Cute Clock Icon -->
+        <div *ngIf="!isArrived" class="flex justify-center mb-2">
+            <div class="relative animate-float">
+                <div [@swing]="swingState">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                        class="w-24 h-24 text-pink-400 drop-shadow-md">
+                        <path fill-rule="evenodd"
+                            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <!-- Cute decorative elements -->
+                <div class="absolute -top-2 -right-2 text-2xl animate-bounce">✨</div>
+                <div class="absolute -bottom-2 -left-2 text-2xl animate-bounce delay-100">✨</div>
+            </div>
+        </div>
+
+        <!-- Title -->
+        <h1 *ngIf="!isArrived" class="text-4xl md:text-6xl font-bold text-pink-600 drop-shadow-md animate-pulse">
+            Germany Calling! 🇩🇪
+        </h1>
+
+        <!-- Road Signs -->
+        <div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 py-8">
+
+            <!-- India Sign -->
+            <div class="group relative transform hover:scale-105 transition-transform duration-300">
+                <div
+                    class="bg-green-600 text-white px-6 py-2 rounded-l-lg shadow-lg border-2 border-white flex items-center gap-2">
+                    <span class="text-2xl">⬅️</span>
+                    <span class="text-xl font-bold">भारत (India)</span>
+                </div>
+                <div class="h-16 w-1 bg-gray-400 mx-auto mt-[-2px]"></div>
+            </div>
+
+            <!-- Arrow Path Animation (Optional) -->
+            <div class="hidden md:block w-32 border-t-4 border-dashed border-pink-300 animate-pulse"></div>
+
+            <!-- Germany Sign -->
+            <div class="group relative transform hover:scale-105 transition-transform duration-300">
+                <div
+                    class="bg-yellow-500 text-black px-6 py-2 rounded-r-lg shadow-lg border-2 border-black flex items-center gap-2">
+                    <span class="text-xl font-bold">Deutschland (Germany)</span>
+                    <span class="text-2xl">➡️</span>
+                </div>
+                <div class="h-16 w-1 bg-gray-400 mx-auto mt-[-2px]"></div>
+            </div>
+        </div>
+
+        <!-- Countdown Timer -->
+        <div *ngIf="!isArrived" class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <div class="bg-white p-4 rounded-xl shadow-lg border border-pink-100">
+                <span class="block text-4xl md:text-6xl font-bold text-pink-500">{{ timeRemaining.days }}</span>
+                <span class="text-gray-500 text-sm uppercase tracking-wide">Days</span>
+            </div>
+            <div class="bg-white p-4 rounded-xl shadow-lg border border-pink-100">
+                <span class="block text-4xl md:text-6xl font-bold text-pink-500">{{ timeRemaining.hours }}</span>
+                <span class="text-gray-500 text-sm uppercase tracking-wide">Hours</span>
+            </div>
+            <div class="bg-white p-4 rounded-xl shadow-lg border border-pink-100">
+                <span class="block text-4xl md:text-6xl font-bold text-pink-500">{{ timeRemaining.minutes }}</span>
+                <span class="text-gray-500 text-sm uppercase tracking-wide">Minutes</span>
+            </div>
+            <div class="bg-white p-4 rounded-xl shadow-lg border border-pink-100">
+                <span class="block text-4xl md:text-6xl font-bold text-pink-500">{{ timeRemaining.seconds }}</span>
+                <span class="text-gray-500 text-sm uppercase tracking-wide">Seconds</span>
+            </div>
+        </div>
+
+        <!-- Arrival Message -->
+        <div *ngIf="isArrived" class="animate-bounce-in text-center space-y-6">
+            <h2 class="text-5xl md:text-7xl font-extrabold text-pink-600 drop-shadow-lg">
+                We Will Miss You! ❤️
+            </h2>
+            <p class="text-2xl text-gray-700 italic">Safe travels & bright future awaits!</p>
+
+            <!-- Emotional GIF/Image Placeholder -->
+            <div class="mt-8 flex justify-center">
+                <!-- You can replace this with an actual image URL or generic emotional smiley -->
+                <div class="text-9xl animate-spin-slow">🥹 ✈️ 🇩🇪</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Background decorations -->
+    <div class="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20 z-0">
+        <div class="absolute top-10 left-10 text-6xl animate-float">☁️</div>
+        <div class="absolute top-20 right-20 text-6xl animate-float-delay">☁️</div>
+        <div class="absolute bottom-10 left-1/4 text-4xl animate-float">🌸</div>
+        <div class="absolute bottom-20 right-1/4 text-4xl animate-float-delay">🌸</div>
+    </div>
+</div>
